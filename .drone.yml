@@ -1,0 +1,20 @@
+workspace:
+  base: /go/src
+  path: github.com/endian/docker-go
+
+clone:
+  git:
+    image: plugins/git:next
+    pull: true
+    tags: true
+
+pipeline:
+  publish:
+    image: kowalatech/drone-docker
+    repo: endian/hugo
+    secrets: [ docker_username, docker_password ]
+    privileged: true 
+    auto_tag: true
+    when:
+        branch: master
+        event: [push, tag] 
