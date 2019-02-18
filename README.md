@@ -2,4 +2,21 @@
 
 Hugo development environment with common tools, including Node.js, Typescript, Fontcustomer, Cucumnber, Capybara and Selenium.
 
-https://hub.docker.com/r/endian/hugo
+See https://hub.docker.com/r/endian/hugo.
+
+Example Drone.io usage:
+
+```
+pipeline:
+    build-production:
+      image: endian/hugo:1.0.1
+      environment:
+        - HUGO_ENV="production"
+        - HUGO_BASEURL="https://endian.io"
+      commands:
+        - make docker-build
+      when:
+        branch: [master]
+        event: [push, tag]
+```
+
