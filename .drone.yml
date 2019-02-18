@@ -10,7 +10,7 @@ clone:
 
 pipeline:
   publish:
-    image: kowalatech/drone-docker
+    image: endian/drone-plugin-docker
     repo: endian/hugo
     secrets: [ docker_username, docker_password ]
     privileged: true 
