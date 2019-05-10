@@ -9,7 +9,7 @@ Example Drone.io usage:
 ```
 pipeline:
     build-production:
-      image: endian/hugo:1.0.1
+      image: endian/hugo:1.0.2
       environment:
         - HUGO_ENV="production"
         - HUGO_BASEURL="https://endian.io"
